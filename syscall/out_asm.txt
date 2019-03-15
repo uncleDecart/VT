@@ -1,0 +1,75 @@
+warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+host mmap_min_addr=0x10000
+Reserved 0x201000 bytes of guest address space
+Relocating guest address space from 0x0000000000400000 to 0x400000
+guest_base  0x0
+start            end              size             prot
+0000000000400000-0000000000401000 0000000000001000 r-x
+0000000000600000-0000000000601000 0000000000001000 rw-
+0000004000000000-0000004000001000 0000000000001000 ---
+0000004000001000-0000004000801000 0000000000800000 rw-
+start_brk   0x0000000000000000
+end_code    0x00000000004000d7
+start_code  0x0000000000400000
+start_data  0x00000000006000d8
+end_data    0x00000000006000e5
+start_stack 0x00000040007ffcb0
+brk         0x00000000006000e5
+entry       0x00000000004000b0
+PROLOGUE: [size=40]
+0x56006005a180:  push   %rbp
+0x56006005a181:  push   %rbx
+0x56006005a182:  push   %r12
+0x56006005a184:  push   %r13
+0x56006005a186:  push   %r14
+0x56006005a188:  push   %r15
+0x56006005a18a:  mov    %rdi,%r14
+0x56006005a18d:  add    $0xfffffffffffffb78,%rsp
+0x56006005a194:  jmpq   *%rsi
+0x56006005a196:  add    $0x488,%rsp
+0x56006005a19d:  pop    %r15
+0x56006005a19f:  pop    %r14
+0x56006005a1a1:  pop    %r13
+0x56006005a1a3:  pop    %r12
+0x56006005a1a5:  pop    %rbx
+0x56006005a1a6:  pop    %rbp
+0x56006005a1a7:  retq   
+
+OUT: [size=93]
+0x56006005a1a8:  mov    -0x8(%r14),%ebp
+0x56006005a1ac:  test   %ebp,%ebp
+0x56006005a1ae:  jne    0x56006005a1f6
+0x56006005a1b4:  mov    $0x1,%ebp
+0x56006005a1b9:  mov    %rbp,(%r14)
+0x56006005a1bc:  mov    $0x1,%ebp
+0x56006005a1c1:  mov    %rbp,0x38(%r14)
+0x56006005a1c5:  mov    $0x6000d8,%ebp
+0x56006005a1ca:  mov    %rbp,0x30(%r14)
+0x56006005a1ce:  mov    $0xd,%ebp
+0x56006005a1d3:  mov    %rbp,0x10(%r14)
+0x56006005a1d7:  movq   $0x4000c9,0x80(%r14)
+0x56006005a1e2:  mov    %r14,%rdi
+0x56006005a1e5:  mov    $0x2,%esi
+0x56006005a1ea:  callq  0x56005fd472f0
+0x56006005a1ef:  xor    %eax,%eax
+0x56006005a1f1:  jmpq   0x56006005a196
+0x56006005a1f6:  mov    $0x7f8fa972d013,%rax
+0x56006005a200:  jmpq   0x56006005a196
+
+hello, world!OUT: [size=72]
+0x56006005a220:  mov    -0x8(%r14),%ebp
+0x56006005a224:  test   %ebp,%ebp
+0x56006005a226:  jne    0x56006005a259
+0x56006005a22c:  mov    $0x3c,%ebp
+0x56006005a231:  mov    %rbp,(%r14)
+0x56006005a234:  xor    %ebp,%ebp
+0x56006005a236:  mov    %rbp,0x38(%r14)
+0x56006005a23a:  movq   $0x4000d5,0x80(%r14)
+0x56006005a245:  mov    %r14,%rdi
+0x56006005a248:  mov    $0x2,%esi
+0x56006005a24d:  callq  0x56005fd472f0
+0x56006005a252:  xor    %eax,%eax
+0x56006005a254:  jmpq   0x56006005a196
+0x56006005a259:  mov    $0x7f8fa972d093,%rax
+0x56006005a263:  jmpq   0x56006005a196
+

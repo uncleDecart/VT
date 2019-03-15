@@ -1,0 +1,32 @@
+warning: TCG doesn't support requested feature: CPUID.01H:ECX.vmx [bit 5]
+host mmap_min_addr=0x10000
+Reserved 0x201000 bytes of guest address space
+Relocating guest address space from 0x0000000000400000 to 0x400000
+guest_base  0x0
+start            end              size             prot
+0000000000400000-0000000000401000 0000000000001000 r-x
+0000000000600000-0000000000601000 0000000000001000 rw-
+0000004000000000-0000004000001000 0000000000001000 ---
+0000004000001000-0000004000801000 0000000000800000 rw-
+start_brk   0x0000000000000000
+end_code    0x00000000004000d7
+start_code  0x0000000000400000
+start_data  0x00000000006000d8
+end_data    0x00000000006000e5
+start_stack 0x00000040007ffcb0
+brk         0x00000000006000e5
+entry       0x00000000004000b0
+----------------
+IN: 
+0x00000000004000b0:  mov    $0x1,%eax
+0x00000000004000b5:  mov    $0x1,%edi
+0x00000000004000ba:  mov    $0x6000d8,%rsi
+0x00000000004000c4:  mov    $0xd,%edx
+0x00000000004000c9:  syscall 
+
+hello, world!----------------
+IN: 
+0x00000000004000cb:  mov    $0x3c,%eax
+0x00000000004000d0:  mov    $0x0,%edi
+0x00000000004000d5:  syscall 
+

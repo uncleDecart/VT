@@ -1,0 +1,38 @@
+PROLOGUE: [size=40]
+0x55c524469200:  push   %rbp
+0x55c524469201:  push   %rbx
+0x55c524469202:  push   %r12
+0x55c524469204:  push   %r13
+0x55c524469206:  push   %r14
+0x55c524469208:  push   %r15
+0x55c52446920a:  mov    %rdi,%r14
+0x55c52446920d:  add    $0xfffffffffffffb78,%rsp
+0x55c524469214:  jmpq   *%rsi
+0x55c524469216:  add    $0x488,%rsp
+0x55c52446921d:  pop    %r15
+0x55c52446921f:  pop    %r14
+0x55c524469221:  pop    %r13
+0x55c524469223:  pop    %r12
+0x55c524469225:  pop    %rbx
+0x55c524469226:  pop    %rbp
+0x55c524469227:  retq   
+
+OUT: [size=99]
+0x55c524469228:  mov    -0x8(%r14),%ebp
+0x55c52446922c:  test   %ebp,%ebp
+0x55c52446922e:  jne    0x55c52446927c
+0x55c524469234:  movq   $0x0,(%r14)
+0x55c52446923b:  movq   $0x400085,0x80(%r14)
+0x55c524469246:  mov    %r14,%rdi
+0x55c524469249:  callq  0x55c52411a827
+0x55c52446924e:  movq   $0x3c,(%r14)
+0x55c524469255:  movq   $0x0,0x38(%r14)
+0x55c52446925d:  movq   $0x400091,0x80(%r14)
+0x55c524469268:  mov    %r14,%rdi
+0x55c52446926b:  mov    $0x2,%esi
+0x55c524469270:  callq  0x55c52411f418
+0x55c524469275:  xor    %eax,%eax
+0x55c524469277:  jmpq   0x55c524469216
+0x55c52446927c:  mov    $0x7f4e13791013,%rax
+0x55c524469286:  jmpq   0x55c524469216
+
